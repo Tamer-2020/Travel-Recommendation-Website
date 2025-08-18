@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <!--Font Awesome For social icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('pics/pic-1.jpg') no-repeat center center/cover;   
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+  /* Navbar */
+.navbar {
+  width: 100%;
+  padding: 8px 30px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+.navbar__item {
+  height: 50px;
+}
+
+.navbar__item:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Navbar Links */
+.navbar__links {
+  margin: 0 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+/* Loggo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  color: #00bcd4;
+}
+
+/*Left Line*/
+.left-line {
+  position: fixed;
+  top: 100px;
+  left: 25px; /* You can adjust this for spacing */
+  width: 2px; /* Line thickness */
+  height: 30vh; /* Full screen height */
+  background-color: white; /* Line color */
+  opacity: 7; /* Optional transparency */
+}
+
+/* Social Icons */
+.social-icons {
+  position: fixed;
+  top: 500px;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 999;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* contact-section */
+.contact-section {
+  background: url('pics/pic-1.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background-color: none; /* dark overlay */
+  width: 100%;
+  height: 50%;
+  display: flex;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.contact-left {
+  flex: 1;
+  color: white;
+  padding: 50px;
+}
+
+.contact-left h1 {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.contact-left p {
+  font-size: 18px;
+}
+
+.contact-right {
+  flex: 1;
+  padding: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+label {
+  color: white;
+  font-weight: bold;
+}
+
+input, textarea {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+/* Button */
+button {
+  background-color: #007a7a;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: yellowgreen;
+}
+
+/* Mobile Menu Hidden by Default */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: flex;
+    flex-direction: column;
+  cursor: pointer;
+  }
+
+  .nav__menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px; /* adjust based on navbar height */
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    z-index: 999;
+  }
+
+  .nav__menu.active {
+    display: flex;
+  }
+
+  .nav__item {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+/* Layout Adjustments */
+.homepage-container {
+  flex-direction: column;
+  height: auto;
+  padding-top: 120px; /* to account for toggle nav */
+  }
+
+  .left-content, .right-content {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+.left-line,
+.social-icons {
+  display: none; /* Hide on mobile */
+}
+
+.results-container {
+  align-items: center;
+ }
+}
+
+/* Grid Layout Responsive */
+@media (max-width: 768px) {
+.navbar__toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  }
+
+  .navbar__toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.navbar__menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.50);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  }
+
+.navbar__menu.active {
+  display: flex;
+}
+
+.navbar__item {
+  margin: 10px 0;
+  text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+/* Remove 'display: none;' for social-icons here */
+.social-icons {
+/* Make the icons visible on mobile */
+  display: flex;
+  flex-direction: row; /* Arranges icons horizontally */
+  justify-content: center; /* Centers the icons */
+  position: fixed; /* Keeps icons in place as you scroll */
+  bottom: 7px; /* Positions icons at the bottom of the screen */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the icons perfectly */
+  gap: 30px; /* Provides space between each icon */
+  background-color: rgba(0, 0, 0, 0.6); /* Optional background for visibility */
+  padding: 10px 20px;
+  border-radius: 20px;
+  top: auto; /* Overrides the desktop 'top' value */
+  }
+
+  /* This will hide the vertical line on mobile screens */
+  .left-line {
+    display: none;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar Section -->
+  <nav  class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-plane"></i>
+    </div>
+
+    <div class="left-line"></div>
+    
+    <!-- Navbar menu -->
+    <ul class="navbar__menu" id="nav-menu">
+      <li class="navbar__item"><a href="travelRecommendation.html" class="navbar__links">Home</a></li>
+      <li class="navbar__item"><a href="About Us.html" class="navbar__links">About Us</a></li>
+      <li class="navbar__item"><a href="Contact Us.html" class="navbar__links">Contact Us</a></li>
+    </ul>
+
+    <!-- Navbar-toggle (Mobile menu) -->
+    <div class="navbar__toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+
+    <!-- Left-Side Social Icons -->
+    <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- Contact Section -->
+  <div class="contact-section">
+    <div class="overlay">
+      <div class="contact-left">
+        <h1>CONTACT US</h1>
+        <p>Get in touch</p>
+      </div>
+      <div class="contact-right">
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Enter Your message" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="travelRecommendation.js"></script>
+
+</body>
+</html>
+    

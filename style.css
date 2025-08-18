@@ -1,0 +1,485 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  padding: 5px 30px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+  color: #00bcd4;
+}
+
+#new-york-time {
+  color: #fff; /* Makes the text white */
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px; /* Adds space between the time and the menu items */
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+} 
+
+.navbar__item {
+  height: 50px;
+}
+
+/* navbar__links */
+.navbar__links {
+  margin: 0 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+.navbar__item:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.search-box input {
+ border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 250px;
+  color: #006666;
+}
+
+.search-icon {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #006666;
+}
+
+.search-box button {
+  border: none;
+  padding: 8px 14px;
+  margin-left: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #007a7a;
+}
+
+.search-box .search-btn {
+  background-color: #007b8a;
+  color: white;
+}
+
+.search-box .clear-btn {
+  border-radius: 20px;
+  background-color: #004d40;
+  margin-left: 5px;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+/* left Line */
+.left-line {
+  position: fixed;
+  top: 100px;
+  left: 25px; /* You can adjust this for spacing */
+  width: 2px; /* Line thickness */
+  height: 30vh; /* Full screen height */
+  background-color: white; /* Line color */
+  opacity: 7; /* Optional transparency */
+}
+
+/* Results Container */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Cards Section */
+.card {
+  width: 360px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.card .place-info h3 {
+  font-size: 20px;
+  margin: 16px 16px 0;
+  color: #1a1a1a;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 16px 16px;
+  line-height: 1.5;
+}
+
+.card .visit-btn {
+  background-color: #0099a9;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin: 0 16px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.card .visit-btn:hover {
+  background-color: blueviolet;
+}
+
+/* Social Icons */
+.social-icons {
+  position: fixed;
+  top: 500px;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  z-index: 999;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.homepage-container {
+  background-image: url('pics/Romsdla-Norway.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 80px; /* for navbar space */
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+
+.left-content {
+  flex: 1;
+  color: white;
+  padding: 70px;
+}
+
+.right-content {
+  width: 400px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin-left: 120px;
+}
+
+.left-content h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.left-content p {
+  margin: 2rem 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: white;
+  max-width: 480px;
+  font-weight: bold;
+}
+
+/* Button Section */
+.btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 12px 20px;
+  background-color: #00bcd4;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #f77062;
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* Mobile Responsive*/
+
+/* Hide menu and toggle on desktop */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Mobile Menu Hidden by Default */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Grid Layout Responsive */
+@media (max-width: 768px) {
+.navbar__toggle {
+  display: flex;
+}
+
+.navbar__menu {
+  display: none;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.50);
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+}
+
+.navbar__menu.active {
+  display: flex;
+}
+
+.navbar__item {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 250px;
+  color: #006666;
+}
+
+.search-icon {
+  margin: 0 10px;
+  font-size: 18px;
+  color: #006666;
+}
+
+.search-box button {
+  border: none;
+  padding: 8px 14px;
+  margin-left: 4px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  background-color: #007a7a;
+}
+
+.search-box .search-btn {
+  background-color: #007b8a;
+  color: white;
+}
+
+.search-box .clear-btn {
+  border-radius: 20px;
+  background-color: #004d40;
+  margin-left: 5px;
+}
+
+.search-box input {
+  width: 100%;
+}
+
+/* Layout Adjustments */  
+.homepage-container {
+  flex-direction: column;
+  height: auto;
+  padding-top: 120px; /* to account for toggle nav */
+  }
+
+.left-content, .right-content {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  }
+
+.left-line,
+.social-icons {
+  display: none; /* Hide on mobile */
+  }
+
+.results-container {
+  align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  
+.left-content {
+  width: 100%;
+  padding: 20px;
+  text-align: center; /* This is the key change to center all content */
+}
+
+/* This ensures the paragraph text itself is centered */
+.left-content p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+/* This will place the social icons vertically on the left side with a background */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px; /* Reduced padding to make the container fit better */
+  border-radius: 10px; /* Applies a consistent radius to all corners */
+  }
+}
+
+@media (max-width: 768px) {
+  
+.right-content {
+  display: flex; /* Ensures the container is visible */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.results-container p {
+  color: #fff; /* Makes the text visible against a dark background */
+  font-size: 16px;
+  font-weight: bold;
+  }
+}
+
+
+
+
